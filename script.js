@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     removePrepositionsFromEndOfLines()
+    openPages()
 })
 
 function removePrepositionsFromEndOfLines() {
@@ -22,4 +23,23 @@ function replacePrepositions(text) {
 
     // Замена пробела на неразрывный пробел &nbsp;
     return text.replace(prepositions, '$1&nbsp;');
+}
+
+function openPages() {
+    const btn = document.querySelectorAll('.nav__button')
+    const text = document.querySelectorAll('.page-main')
+
+    btn.forEach((el, key) => {
+        el.addEventListener('click', (e) => {
+            btn.forEach(el => el.classList.remove('nav__button_active'))
+            el.classList.add('nav__button_active')
+
+            setTimeout(()=> text.forEach(el => el.classList.add('page-main_to-hidden')), 1)
+            setTimeout(() => text.forEach(el => el.classList.remove('page-main_active')), 300)
+            setTimeout(() => text[key].classList.add('page-main_active'), 600)
+            setTimeout(() => text[key].classList.remove('page-main_to-hidden'), 900)
+
+            text[key].classList.add('page-main_active')
+        })
+    })
 }

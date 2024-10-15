@@ -114,7 +114,8 @@
     display: grid;
     grid-template-areas: "header header" "main nav" "footer footer";
     grid-template-columns: minmax(45rem, 50rem) min-content;
-    grid-gap: 1rem 2rem;
+    grid-template-rows: auto minmax(100vh, auto) auto;
+    grid-gap: 1rem;
 
     justify-content: center;
 
@@ -131,8 +132,8 @@
 
     padding: 2rem 5rem;
     background-color: #000000;
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 
     color: #ffffff;
 }
@@ -142,13 +143,31 @@
 }
 
 .page-main {
+    display: none;
+
+    opacity: 1;
+
     grid-area: main;
 
     background-color: #ffffff;
 
-    border-radius: 1rem;
+    border-radius: 2rem 1rem 1rem 2rem;
 
     padding: 2rem 3rem;
+
+    transition: all .3s ease-out;
+
+    transform: translateY(0);
+}
+
+.page-main_active {
+    display: block;
+}
+
+.page-main_to-hidden {
+    opacity: 0;
+    transform: translateY(5rem);
+    transition: all .3s ease-in;
 }
 
 .article {
@@ -191,7 +210,7 @@
     grid-gap: 1rem;
 
     border-radius: 3rem;
-    background-color: #dcd7fd;
+    background-color: #eae6ff;
 
     padding: 2rem 3rem 3rem 6rem;
 
@@ -210,6 +229,9 @@
 }
 
 .article__copyright {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
 .page-nav {
@@ -217,15 +239,49 @@
 }
 
 .nav {
+    position: sticky;
+    top: 1rem;
+
+    background-color: #fff;
+    border-radius: 1rem 2rem 2rem 1rem;
+
+    padding: .5rem;
+
+    font-size: 1rem;
+
+    list-style: none;
 }
 
 .nav__el {
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.nav__el:first-child {
+    border-top-right-radius: 1.4rem;
+}
+
+.nav__el:last-child {
+    border-bottom-right-radius: 1.4rem;
 }
 
 .nav__button {
+    text-align: start;
+    width: 100%;
+    padding: .5rem 2rem;
+
+    font-size: 1.1rem;
+
+    transition: background-color 0.4s ease;
+}
+
+.nav__button:hover {
+    background-color: #dcd7fd;
+    cursor: pointer;
 }
 
 .nav__button_active {
+    background-color: #ece8ff;
 }
 
 .page-footer {

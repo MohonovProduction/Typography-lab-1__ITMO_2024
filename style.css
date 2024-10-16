@@ -125,6 +125,8 @@
     background-color: #ece9f6;
 
     padding: 0 1rem;
+
+    color: #1a1a1b;
 }
 
 .page-loader {
@@ -183,7 +185,7 @@
     grid-area: header;
 
     padding: 2rem 5rem;
-    background-color: #000000;
+    background-color: #1a1a1b;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
 
@@ -334,6 +336,10 @@
 }
 
 .nav__button {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: normal;
+
     text-align: start;
     width: 100%;
     padding: .5rem 2rem;

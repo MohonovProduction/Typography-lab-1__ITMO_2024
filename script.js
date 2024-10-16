@@ -1,7 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    load()
     removePrepositionsFromEndOfLines()
     openPages()
 })
+
+function load() {
+    const loader = document.querySelector('.page-loader')
+    const line = loader.querySelector('.page-loader__line')
+
+    setTimeout(() => line.classList.add('page-loader__line_loaded'), 1)
+    setTimeout(() => loader.classList.add('page-loader_disable'), 3010)
+    setTimeout(() => loader.classList.add('page-loader_removed'), 4010)
+
+}
 
 function removePrepositionsFromEndOfLines() {
     const els = []

@@ -273,26 +273,29 @@
 .article__blockquote {
     position: relative;
 
+    font-size: 1.25em;
+
     display: grid;
     grid-gap: 1rem;
 
     border-radius: 3rem;
-    background-color: #eae6ff;
+    background-color: #f3efff;
 
     padding: 2rem 3rem 3rem 6rem;
 
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 }
 
 .article__blockquote::before {
     content: '«';
     position: absolute;
-    top: calc(50% - 6rem);
-    left: .6rem;
+    top: -2rem;
+    left: 1rem;
 
     font-size: 6rem;
 
-    color: #9f97ca;
+    color: #e2dbff;
 }
 
 .article__copyright {

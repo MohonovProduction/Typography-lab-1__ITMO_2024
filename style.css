@@ -127,6 +127,8 @@
     padding: 0 1rem;
 
     color: #1a1a1b;
+
+    transition: height .3s ease-in-out;
 }
 
 .page-loader {

@@ -45,9 +45,19 @@ function openPages() {
             btn.forEach(el => el.classList.remove('nav__button_active'))
             el.classList.add('nav__button_active')
 
+            const footer = document.querySelector('.page-footer')
+
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
+
             setTimeout(()=> text.forEach(el => el.classList.add('page-main_to-hidden')), 1)
+            setTimeout(()=> footer.classList.add('page-footer_hidden'), 1)
             setTimeout(() => text.forEach(el => el.classList.remove('page-main_active')), 300)
             setTimeout(() => text[key].classList.add('page-main_active'), 600)
+            setTimeout(() => footer.classList.remove('page-footer_hidden'), 600)
             setTimeout(() => text[key].classList.remove('page-main_to-hidden'), 900)
 
             text[key].classList.add('page-main_active')
